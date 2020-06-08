@@ -5,36 +5,39 @@ light blue: #1c5380
 */
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html {
-  width: 1024px;
-  height: 794px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
   font: 200 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-top: 50px;
   background-image: url("./../images/bgtile.png");
   background-repeat: repeat-x ;
-  height: 100%;
-
 }
 
 #phone {
   height: 30rem;
+  margin: 0 2rem;
 }
 
 #login {
   display: flex;
+  justify-content: space-between;
+  width: 6rem;
   background-color: #1c5380;
-  padding: 5px;
-  box-shadow: 2px 2px 2px #06365f;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 5px #06365f;
+  border-radius: 0.2rem;
+  font-weight: bolder;
 }
 #login a {
   text-decoration: none;
@@ -42,31 +45,57 @@ body {
   font-weight: bolder;
 }
 
+#login:hover {
+  background-color: #88b5da;
+}
+
 #main-box {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  padding: 36px;
+
+  /* border: 1px solid red; */
+
 }
 
 #information {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30rem;
+  width: 40rem;
+  /* border: 1px solid blue; */
+
 }
 
 #header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 0.8rem;
 }
 
-#text-box {
+#text-container {
   background-image: url("./../images/frame.png");
-  background-size: 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding: 0 40px 0 20px;
+  padding: 1rem;
+  /* border: 1px solid red; */
+}
 
+.text-box{
+  padding: 1rem;
+}
+.text-box>h1{
+  padding-bottom: 1rem;
+  color: #357;
+}
+.text-box>p{
+  padding-bottom: 0.8rem;
+}
+
+#stores-btn {
+  padding: 1.5rem 0;
 }
 
 footer {
@@ -92,42 +121,63 @@ footer div a {
   
 }
 
-.insta-footer {
-  
-}
+@media (max-width: 760px) {
 
-@media (max-width: 600px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  #insta-logo>img{
+    width: 50vw;
+    margin-top: 0.5rem;
+  }
+  #login{
+    width: 6rem;
+  }
+
   #main-box {
     flex-direction: column-reverse;
     flex-wrap: wrap;
-    margin-top: 500px;
-    height: 1500px;
+    padding: 0;
   }
-  footer {
-    margin: 15px 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+  #information {
+    margin: 0;
+    width: 100vw;
+    
   }
+  #text-container{
+    background-size: 100% 120%;
+    padding-bottom: 0;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+
+  #phone{
+    height: 40vh;
+    margin-bottom: 1.5rem;
+
+  }
+
   .footer-items {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
   }
-  #main-box {
-    padding-top: 80px;
+  .footer-items>a {
+    width: 4rem;
+    padding: 0;
+    margin: 0.3rem;
   }
-  #information {
-    margin-top: 100px;
-  }
-  #text-box {
-    margin-top: 50px;
-  }
-  #footer-links {
+
+
+  footer {
+    border-top: 1px solid #06365f;
+    align-self: center;
+    width: 80vw;
     display: flex;
-    justify-content: space-evenly;
-  }
-  #phone {
-    margin-top: 50px;
+    justify-content: center;
+    font-size: 0.7rem;
   }
   
 }
